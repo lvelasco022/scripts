@@ -18,7 +18,8 @@ def re_position (re_site_file=None, enzyme_name=None, initial_position=0, final_
         exit()
     re_site = open(re_site_file)
     for line in re_site:
-        if line.startswith("#") or line.startswith("\n"):
+        line = line.strip() # Get rid of starting and trailing whitespace
+        if not line or line.startswith("#"):
             pass
         else:
             info = line.split(",")
