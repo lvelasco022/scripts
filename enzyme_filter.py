@@ -26,7 +26,7 @@ def re_position (re_site_file=None, enzyme_name=None, initial_position=0, final_
         position = int(info[1])
         enzyme = info[2]
         initial_seq = info[3]
-        new_seq = info[4].replace("\n","").replace("\r","")
+        new_seq = info[4]
         site_len = len(initial_seq)
         if enzyme_name is None or enzyme == (enzyme_name) or enzyme_name == "all":
             if palindrome(new_seq):
