@@ -13,7 +13,7 @@ def palindrome (seq):
 def re_position (re_site_file=None, enzyme_name=None, initial_position=0, final_position=1000000):
     """Filter the results of a .csv file
     """
-    if re_site_file == None:
+    if re_site_file is None:
         print ("ENTER at least THE FILE NAME")
         exit()
     re_site = open(re_site_file)
@@ -28,7 +28,7 @@ def re_position (re_site_file=None, enzyme_name=None, initial_position=0, final_
             initial_seq = info[3]
             new_seq = info[4].replace("\n","").replace("\r","")
             site_len = len(initial_seq)
-            if enzyme_name == None or enzyme == (enzyme_name) or enzyme_name == "all":
+            if enzyme_name is None or enzyme == (enzyme_name) or enzyme_name == "all":
                 if palindrome(new_seq):
                     if initial_position <= (position) and final_position >= (position):
                         print ("The enzyme " + enzyme + " cuts " + new_seq + " at position " + str(position) + " by introducing " + num_changes + " silent mutation(s) in the original sequence " + initial_seq)
