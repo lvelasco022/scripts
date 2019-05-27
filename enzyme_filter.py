@@ -15,7 +15,7 @@ def re_position (re_site_file=None, enzyme_name=None, initial_position=0, final_
     """
     if re_site_file is None:
         print ("ENTER at least THE FILE NAME")
-        exit()
+        sys.exit()
     re_site = open(re_site_file)
     for line in re_site:
         line = line.strip() # Get rid of starting and trailing whitespace
