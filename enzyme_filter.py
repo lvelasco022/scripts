@@ -21,18 +21,17 @@ def re_position (re_site_file=None, enzyme_name=None, initial_position=0, final_
         line = line.strip() # Get rid of starting and trailing whitespace
         if not line or line.startswith("#"):
             continue
-        else:
-            info = line.split(",")
-            num_changes = info[0]
-            position = int(info[1])
-            enzyme = info[2]
-            initial_seq = info[3]
-            new_seq = info[4].replace("\n","").replace("\r","")
-            site_len = len(initial_seq)
-            if enzyme_name is None or enzyme == (enzyme_name) or enzyme_name == "all":
-                if palindrome(new_seq):
-                    if initial_position <= (position) and final_position >= (position):
-                        print ("The enzyme " + enzyme + " cuts " + new_seq + " at position " + str(position) + " by introducing " + num_changes + " silent mutation(s) in the original sequence " + initial_seq)
+        info = line.split(",")
+        num_changes = info[0]
+        position = int(info[1])
+        enzyme = info[2]
+        initial_seq = info[3]
+        new_seq = info[4].replace("\n","").replace("\r","")
+        site_len = len(initial_seq)
+        if enzyme_name is None or enzyme == (enzyme_name) or enzyme_name == "all":
+            if palindrome(new_seq):
+                if initial_position <= (position) and final_position >= (position):
+                    print ("The enzyme " + enzyme + " cuts " + new_seq + " at position " + str(position) + " by introducing " + num_changes + " silent mutation(s) in the original sequence " + initial_seq)
 
 
 ##Enter the filters from the comand line
