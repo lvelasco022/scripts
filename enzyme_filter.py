@@ -1,14 +1,16 @@
 from __future__ import division
 import sys
 
-##Define what a palindromic sequence is
 def palindrome (seq):
+    """Define what a palindromic sequence is
+    """
     complement= {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A'}
     complement_seq = ''.join([complement[base] for base in seq[::-1]])
     return seq == complement_seq
 
-##Filter the results of a .csv file
 def re_position (re_site_file=None, enzyme_name=None, initial_position=0, final_position=1000000):
+    """Filter the results of a .csv file
+    """
     if re_site_file==None:
         print ("ENTER at least THE FILE NAME")
         exit()
