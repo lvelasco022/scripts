@@ -29,7 +29,8 @@ def re_position (re_site_file=None, enzyme_name=None, initial_position=0, final_
         new_seq = info[4]
         site_len = len(initial_seq)
         if enzyme_name in (None, enzyme, "all") and palindrome(new_seq) and initial_position <= (position) <= final_position:
-                    print ("The enzyme " + enzyme + " cuts " + new_seq + " at position " + str(position) + " by introducing " + num_changes + " silent mutation(s) in the original sequence " + initial_seq)
+            print ("The enzyme", enzyme, "cuts", new_seq, "at position", position,
+                   "by introducing", num_changes, "silent mutation(s) in the original sequence", initial_seq)
 
 
 ##Enter the filters from the comand line
