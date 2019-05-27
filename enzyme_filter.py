@@ -20,7 +20,7 @@ def re_position (re_site_file=None, enzyme_name=None, initial_position=0, final_
     for line in re_site:
         line = line.strip() # Get rid of starting and trailing whitespace
         if not line or line.startswith("#"):
-            pass
+            continue
         else:
             info = line.split(",")
             num_changes = info[0]
