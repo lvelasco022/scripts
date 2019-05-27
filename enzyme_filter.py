@@ -10,7 +10,7 @@ def palindrome (seq):
     return seq == complement_seq
 
 
-def re_position (re_site_file=None, enzyme_name=None, initial_position=0, final_position=1000000):
+def re_position (re_site_file, enzyme_name, initial_position=0, final_position=1000000):
     """Filter the results of a .csv file
     """
     if re_site_file is None:
